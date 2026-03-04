@@ -62,3 +62,13 @@
 /vendor/
 ###< symfony/framework-bundle ###
 >>>>>>> 749dcb3 (Initial commit)
+
+###> phpunit/phpunit ###
+/phpunit.xml
+/.phpunit.cache/
+###< phpunit/phpunit ###
+
+###> symfony/asset-mapper ###
+/public/assets/
+/assets/vendor/
+###< symfony/asset-mapper ###
