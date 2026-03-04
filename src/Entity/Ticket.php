@@ -11,7 +11,6 @@ use Symfony\Component\Uid\Uuid;
 class Ticket
 {
     #[ORM\Id]
-    #[ORM\GeneratedValue]
     #[ORM\Column(type: 'uuid', unique: true)]
     private Uuid $id;
 
