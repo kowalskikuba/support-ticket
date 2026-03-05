@@ -1,0 +1,29 @@
+<h1>Tickets</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Email</th>
+        <th>Subject</th>
+        <th>Status</th>
+        <th>Created</th>
+    </tr>
+    </thead>
+
+    <tbody>
+    {% for ticket in tickets %}
+        <tr>
+            <td>{{ ticket.id }}</td>
+            <td>{{ ticket.email }}</td>
+            <td>{{ ticket.subject }}</td>
+            <td>{{ ticket.status }}</td>
+            <td>{{ ticket.createdAt|date('Y-m-d H:i') }}</td>
+        </tr>
+    {% else %}
+        <tr>
+            <td colspan="5">No tickets found</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>

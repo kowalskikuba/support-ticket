@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Form;
+namespace App\Ticket\Form;
 
-use App\Entity\Ticket;
+use App\Data\Entity\Ticket;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\EmailType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;

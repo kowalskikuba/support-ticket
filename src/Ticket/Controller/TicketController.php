@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Controller;
+namespace App\Ticket\Controller;
 
-use App\Entity\Ticket;
-use App\Form\TicketType;
-use Doctrine\ORM\EntityManagerInterface;
+use App\Data\Entity\Ticket;
+use App\Ticket\Form\TicketType;
+use App\Ticket\Service\TicketService;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -12,16 +12,18 @@ use Symfony\Component\Routing\Attribute\Route;
 
 final class TicketController extends AbstractController
 {
-    #[Route('/ticket', name: 'app_ticket')]
-    public function index(): Response
+    #[Route('/ticket', name: 'ticket_list')]
+    public function index(TicketService $ticketService): Response
     {
-        return $this->render('ticket/index.html.twig', [
-            'controller_name' => 'TicketController',
+        $tickets = $ticketService->getAll();
+
+        return $this->render('ticket/list.html.twig', [
+            'tickets' => $tickets,
         ]);
     }
 
     #[Route('/ticket/create', name: 'ticket_create')]
-    public function create(Request $request, EntityManagerInterface $em): Response
+    public function create(Request $request, TicketService $ticketService): Response
     {
         $ticket = new Ticket();
 
@@ -30,12 +32,11 @@ final class TicketController extends AbstractController
 
         if ($form->isSubmitted() && $form->isValid()) {
 
-            $em->persist($ticket);
-            $em->flush();
+            $ticketService->save($ticket);
 
             $this->addFlash('success', 'Ticket created!');
 
-            return $this->redirectToRoute('ticket_create');
+            return $this->redirectToRoute('ticket_list');
         }
 
         return $this->render('ticket/create.html.twig', [

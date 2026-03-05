@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "026c591ac89e68f58313d6cb6c5e01c8",
+    "content-hash": "a21f7c0ecd678a48f076b11ef86f58f4",
     "packages": [
         {
             "name": "composer/semver",
@@ -1367,6 +1367,71 @@
             "time": "2026-01-02T08:56:05+00:00"
         },
         {
+            "name": "pda/pheanstalk",
+            "version": "v8.0.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/pheanstalk/pheanstalk.git",
+                "reference": "e915a4cad2f4d8fc9a7c9165c80785985d2571ad"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/pheanstalk/pheanstalk/zipball/e915a4cad2f4d8fc9a7c9165c80785985d2571ad",
+                "reference": "e915a4cad2f4d8fc9a7c9165c80785985d2571ad",
+                "shasum": ""
+            },
+            "require": {
+                "ext-mbstring": "*",
+                "php": ">=8.3.0"
+            },
+            "require-dev": {
+                "captainhook/plugin-composer": "^5.3",
+                "phpstan/extension-installer": "^1.1",
+                "phpstan/phpstan": "^2",
+                "phpstan/phpstan-strict-rules": "^2",
+                "phpunit/phpunit": "^12",
+                "ramsey/conventional-commits": "^1.2",
+                "rector/rector": "^2.0",
+                "symplify/easy-coding-standard": "^12"
+            },
+            "suggest": {
+                "ext-sockets": "Socket implementation works best for long running processes"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Pheanstalk\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Paul Annesley",
+                    "email": "paul@annesley.cc",
+                    "homepage": "http://paul.annesley.cc/",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Sam Mousa",
+                    "email": "sam@mousa.nl",
+                    "role": "Maintainer"
+                }
+            ],
+            "description": "PHP client for beanstalkd queue",
+            "homepage": "https://github.com/pheanstalk/pheanstalk",
+            "keywords": [
+                "beanstalkd"
+            ],
+            "support": {
+                "issues": "https://github.com/pheanstalk/pheanstalk/issues",
+                "source": "https://github.com/pheanstalk/pheanstalk/tree/v8.0.2"
+            },
+            "time": "2025-11-11T13:49:01+00:00"
+        },
+        {
             "name": "phpdocumentor/reflection-common",
             "version": "2.2.0",
             "source": {
@@ -2045,6 +2110,73 @@
                 }
             ],
             "time": "2026-02-17T13:07:04+00:00"
+        },
+        {
+            "name": "symfony/beanstalkd-messenger",
+            "version": "v8.0.6",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/symfony/beanstalkd-messenger.git",
+                "reference": "d5e316f2c9437cb68fd822577dfc38fafd972cbc"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/symfony/beanstalkd-messenger/zipball/d5e316f2c9437cb68fd822577dfc38fafd972cbc",
+                "reference": "d5e316f2c9437cb68fd822577dfc38fafd972cbc",
+                "shasum": ""
+            },
+            "require": {
+                "pda/pheanstalk": "^5.1|^7.0|^8.0",
+                "php": ">=8.4",
+                "symfony/messenger": "^7.4|^8.0"
+            },
+            "require-dev": {
+                "symfony/property-access": "^7.4|^8.0",
+                "symfony/serializer": "^7.4|^8.0"
+            },
+            "type": "symfony-messenger-bridge",
+            "autoload": {
+                "psr-4": {
+                    "Symfony\\Component\\Messenger\\Bridge\\Beanstalkd\\": ""
+                },
+                "exclude-from-classmap": [
+                    "/Tests/"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Antonio Pauletich",
+                    "email": "antonio.pauletich95@gmail.com"
+                }
+            ],
+            "description": "Symfony Beanstalkd Messenger Bridge",
+            "homepage": "https://symfony.com",
+            "support": {
+                "source": "https://github.com/symfony/beanstalkd-messenger/tree/v8.0.6"
+            },
+            "funding": [
+                {
+                    "url": "https://symfony.com/sponsor",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/fabpot",
+                    "type": "github"
+                },
+                {
+                    "url": "https://github.com/nicolas-grekas",
+                    "type": "github"
+                },
+                {
+                    "url": "https://tidelift.com/funding/github/packagist/symfony/symfony",
+                    "type": "tidelift"
+                }
+            ],
+            "time": "2026-02-13T09:57:13+00:00"
         },
         {
             "name": "symfony/cache",

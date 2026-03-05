@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Entity;
+namespace App\Data\Entity;
 
-use App\Repository\TicketRepository;
+use App\Data\Repository\TicketRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Uid\Uuid;
